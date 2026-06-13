@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - VinTa RolePlay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">VinTa RolePlay</div>
+            <ul class="nav-links">
+                <li class="online-status">● Online</li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="store.html">Donations</a></li>
+                <li><a href="#">Staff Panel</a></li>
+                <li><a href="#"><button class="btn-login">Admin Panel</button></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">ADMIN PANEL</div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="icon">⊞</span> Applications
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">?</span> Questions
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">⊡</span> Store Manager
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">👥</span> Team
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">⚙</span> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+            <div class="dashboard-header">
+                <h1>Admin Dashboard</h1>
+                <p>Manage applications and server settings.</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <label>Total Pending</label>
+                    <div class="stat-number pending">0</div>
+                </div>
+                <div class="stat-card">
+                    <label>Total Accepted</label>
+                    <div class="stat-number accepted">1</div>
+                </div>
+                <div class="stat-card">
+                    <label>Total Rejected</label>
+                    <div class="stat-number rejected">0</div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <h2>Pending Applications</h2>
+                <div class="tabs">
+                    <button class="tab-link active" onclick="filterTab('all')">Whitelist</button>
+                    <button class="tab-link" onclick="filterTab('staff')">Staff</button>
+                    <button class="tab-link" onclick="filterTab('gang')">Gang</button>
+                </div>
+                <div class="applications-table">
+                    <p class="empty-state">✓ No pending applications in this category.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 VinTa RolePlay. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterTab(tab) {
+            const buttons = document.querySelectorAll('.tab-link');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

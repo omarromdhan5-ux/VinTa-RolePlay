@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Store - VinTa RolePlay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">VinTa RolePlay</div>
+            <ul class="nav-links">
+                <li class="online-status">● Online</li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="store.html">Donations</a></li>
+                <li><a href="#"><button class="btn-login">Login</button></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="store-section">
+        <div class="store-header">
+            <h1>⊡ SERVER STORE</h1>
+            <p>Support the development of VinTa RolePlay and receive exclusive in-game perks. All donations go directly towards server hosting and custom assets.</p>
+        </div>
+
+        <div class="store-tabs">
+            <button class="tab-btn active" onclick="filterProducts('cars')">Addon Car</button>
+            <button class="tab-btn" onclick="filterProducts('bikes')">Addon Bike</button>
+            <button class="tab-btn" onclick="filterProducts('properties')">Properties</button>
+            <button class="tab-btn" onclick="filterProducts('design')">Design</button>
+            <button class="tab-btn" onclick="filterProducts('gangs')">Peds & Gangs</button>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card" data-category="cars">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200/FF6B35/FFFFFF?text=Ferrari+SF90" alt="Ferrari SF90">
+                    <span class="price">$50.00</span>
+                </div>
+                <h3>Ferrari SF90</h3>
+                <p>الفيراري الحديثة بتصميم رياضي فاخر</p>
+                <button class="btn-purchase">Purchase via Ticket</button>
+            </div>
+
+            <div class="product-card" data-category="cars">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200/1E90FF/FFFFFF?text=Lamborghini+Urus" alt="Lamborghini Urus">
+                    <span class="price">$45.00</span>
+                </div>
+                <h3>Lamborghini Urus</h3>
+                <p>سيارة لامبورغيني فاخرة وسريعة</p>
+                <button class="btn-purchase">Purchase via Ticket</button>
+            </div>
+
+            <div class="product-card" data-category="bikes">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200/FF1493/FFFFFF?text=Sport+Bike" alt="Sport Bike">
+                    <span class="price">$30.00</span>
+                </div>
+                <h3>Sport Bike</h3>
+                <p>دراجة سريعة للأداء العالي</p>
+                <button class="btn-purchase">Purchase via Ticket</button>
+            </div>
+
+            <div class="product-card" data-category="properties">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200/20B2AA/FFFFFF?text=Luxury+House" alt="Luxury House">
+                    <span class="price">$99.00</span>
+                </div>
+                <h3>Luxury House</h3>
+                <p>منزل فاخر في أفضل الأحياء</p>
+                <button class="btn-purchase">Purchase via Ticket</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>VINTARP</h3>
+            <p>Serious Roleplay Command Center</p>
+        </div>
+        <p class="footer-copyright">© 2026 VinTa RolePlay. All rights reserved. Made with Replit</p>
+    </footer>
+
+    <script>
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            cards.forEach(card => {
+                if (card.dataset.category === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.classList.add('show'), 10);
+                } else {
+                    card.classList.remove('show');
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
